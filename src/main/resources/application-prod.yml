@@ -1,0 +1,16 @@
+
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://prince:123@cluster0.bt64igl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
+
+server:
+  port: 8080
+  servlet:
+    context-path: /journal
+
+  # spring.data.mongodb.password=123
+  # spring.data.mongodb.username=prince
+
+
