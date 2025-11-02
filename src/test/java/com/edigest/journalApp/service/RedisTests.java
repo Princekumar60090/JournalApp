@@ -15,7 +15,7 @@ public class RedisTests {
     @Disabled
     @Test
     void testSendMail(){
-        redisTemplate.opsForValue().set("email","princemaurya90600@gmail.com");
+        redisTemplate.opsForValue().set("email","abc@gmail.com");
 
         Object salary = redisTemplate.opsForValue().get("salary");
         int a=1;
