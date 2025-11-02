@@ -1,16 +1,10 @@
-
-
+# GOOD: Secrets are loaded from Environment Variables
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://prince:123@cluster0.bt64igl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
-
-server:
-  port: 8080
-  servlet:
-    context-path: /journal
-
-  # spring.data.mongodb.password=123
-  # spring.data.mongodb.username=prince
-
-
+      # The URI is now read from an environment variable named MONGO_URI
+      uri: ${MONGO_URI}
+  mail:
+    # Same for SMTP credentials
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
