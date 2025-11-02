@@ -1,20 +1,14 @@
+
 spring:
   profiles:
     active: dev
   mail:
     host: smtp.gmail.com
     port: 587
-    username: princekumar60090@gmail.com
-    # Make sure to use an App Password for Gmail, not your regular password.
-    password: peyq cjff hfwh rkst
+    username: ${SMTP_USERNAME} 
+    password: ${SMTP_PASSWORD} 
     properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
 
-# Your custom properties are structured correctly
 weather:
   api:
-    key: a006cb2c65079f840abb2f7a264e6bf6
+    key: ${WEATHER_API_KEY} 
