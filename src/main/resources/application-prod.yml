@@ -1,10 +1,8 @@
-# GOOD: Secrets are loaded from Environment Variables
+
 spring:
   data:
     mongodb:
-      # The URI is now read from an environment variable named MONGO_URI
       uri: ${MONGO_URI}
   mail:
-    # Same for SMTP credentials
     username: ${SMTP_USERNAME}
     password: ${SMTP_PASSWORD}
