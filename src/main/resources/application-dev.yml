@@ -1,15 +1,9 @@
+
 spring:
   redis:
-    host: redis-11748.c8.us-east-1-4.ec2.redns.redis-cloud.com
-    port: 11748
-    password: G4Aq7iP0xBqly4T2klwr1KxDoKtGMuXA 
-
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
   data:
     mongodb:
-      uri: mongodb+srv://prince:9060@cluster0.bt64igl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
-
-server:
-  port: 8080
-  servlet:
-    context-path: /journal
-
+      uri: ${MONGO_URI_DEV}
