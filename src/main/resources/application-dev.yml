@@ -6,7 +6,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb+srv://prince:123@cluster0.bt64igl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://prince:9060@cluster0.bt64igl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
 
 server:
   port: 8080

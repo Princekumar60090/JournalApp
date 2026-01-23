@@ -2,6 +2,8 @@ package com.edigest.journalApp.controller;
 
 import com.edigest.journalApp.entity.User;
 import com.edigest.journalApp.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException; // Import added
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/public")
+@Tag(name="Public APIs")
 public class PublicController {
 
     @Autowired
@@ -21,6 +24,7 @@ public class PublicController {
     }
 
     @PostMapping("/create-user")
+    @Operation(summary = "Sign up for new user")
     public ResponseEntity<?> createUser(@RequestBody User user) {
         try {
             // Your logic remains the same

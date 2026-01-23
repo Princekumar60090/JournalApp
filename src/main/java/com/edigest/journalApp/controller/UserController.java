@@ -4,6 +4,8 @@ import com.edigest.journalApp.api.response.WeatherResponse;
 import com.edigest.journalApp.entity.User;
 import com.edigest.journalApp.service.UserService;
 import com.edigest.journalApp.service.WeatherService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@Tag(name="User APIs",description = "Read, Update & Delete User")
 public class UserController {
 
     @Autowired
@@ -22,6 +25,7 @@ public class UserController {
 
     // UPDATED METHOD
     @PutMapping
+    @Operation(summary = "Update user details")
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userName = authentication.getName();
@@ -46,6 +50,7 @@ public class UserController {
     }
 
     @DeleteMapping
+    @Operation(summary = "Delete user by Id")
     public ResponseEntity<?> deleteUserById() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userName = authentication.getName();
@@ -55,6 +60,7 @@ public class UserController {
 
 
     @GetMapping
+    @Operation(summary = "Greet user with Weather Response of given city")
     public ResponseEntity<?> greetings() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         WeatherResponse weatherResponse =  weatherService.getWeather("Mumbai");
